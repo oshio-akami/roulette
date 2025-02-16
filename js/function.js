@@ -1,6 +1,7 @@
 $(document).ready(async function(){
   const reelList= await getCsvData();
-  const csvData = reelList.split(',');
+  const csvData = reelList.split(/\n/).filter(c=>c.length>1);
+  
   DeleteFileInput();
   let isReelAnimation=false;
   let isStop=true;
