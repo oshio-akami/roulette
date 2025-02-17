@@ -1,6 +1,6 @@
 $(document).ready(async function(){
   const reelList= await getCsvData();
-  const csvData = reelList.split(/\n/).filter(c=>c.length>1);
+  let csvData = reelList.split(/\n/).filter(c=>c.length>1);
   
   DeleteFileInput();
   let isReelAnimation=false;
@@ -8,6 +8,9 @@ $(document).ready(async function(){
   const marginEnd=8;
   const marginStart=2;
   const $reels=$('#reels');
+  while(csvData.length<=marginEnd){
+    csvData=csvData.concat(csvData);
+  }
   
 
   createReel(csvData[csvData.length-1], 100);
@@ -79,10 +82,9 @@ $(document).ready(async function(){
         },
         complete: function (elements) {
           AnimateReel();
-          console.log("complete");
         },
         loop:0,
-        duration: 15 * $($reel).length,
+        duration: 25 * $($reel).length,
         easing: "linear",
       }
     );
