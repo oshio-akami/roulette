@@ -92,7 +92,7 @@ $(document).ready(async function(){
   function StopAnimation(){
     const height=parseFloat($reel.eq(0).css('height'));
     const top = parseFloat($reel.eq(0).css('top'));
-    const move=top+(height-(top%height))+height*marginEnd;
+    const move=top+(height-(top%height))+height*(marginEnd-1);
     $($reel).velocity(
       {
         top: move,
