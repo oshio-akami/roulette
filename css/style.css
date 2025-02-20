@@ -1,8 +1,19 @@
-.bg-img{
-  position: absolute;
+
+.roulette-game{
+  display: flex;
+}
+.roulette{
+  width:75vw;
+  position: relative;
   top:0;
   left:0;
-  width:100vw;
+}
+
+.bg-img{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
   height:100vh;
   z-index: 1;
 }
@@ -36,6 +47,8 @@
   align-items: center;
   content-visibility:auto;
   z-index: 4;
+  border-top:1px solid #e0e0e0;
+  border-bottom:1px solid #e0e0e0;
 }
 
 .button{
@@ -62,24 +75,56 @@
   left:65%;
   transform:translate(-50%,-50%);
 }
-.form{
+
+.menu{
+  width:23vw;
+  height:94vh;
+  border-radius: 20px;
+  background-color: #e0e0e0;
+  opacity: 0.7;
+  padding: 10px;
+  margin:3vh 1vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.form-wrapper{
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-  position: absolute;
-  top:100px;
-  left:50px;
-  z-index: 3;
-  width:450px;
-  height:80px;
-  background-color: #e0e0e0;
+  width:90%;
+  background-color: white;
   border-radius: 10px;
   border: 2px solid lightgray;
 }
 
+.file-input{
+  height:15%;
+}
+
 #csv-file{
+  width: 100%;
+  padding: 10px;
+}
+
+label{
   font-size: 1.2rem;
 }
 
+.item-input{
+  height:80%;
+} 
 
+textarea{
+  resize: none;
+  line-height: 1.5;
+  width:90%;
+  padding: 10px;
+  height:80%;
+  border:2px solid black;
+  margin-bottom: 20px;
+  overflow: scroll;
+}
   

@@ -1,27 +1,47 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8" />
     <title>ルーレット</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/modern-css-reset/dist/reset.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fitty/2.2.6/fitty.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"></script>
     <script src="js/function.js"></script>
   </head>
+
   <body>
-    <div class="roulette">
-      <img class="bg-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8JP3WDhHgrIACKmRoqRX3JsDo_Gcdeg8eBqQovZSR0Sf3_67zd6h9JiqgtRnTu0HriSiO3-598d2o2nBOlmkngzoWr0uFuX05bWtKruml0xp6esFWUxwEbDYCPIKDaliG05uZLCyOpXPH/s800/gekijou_end_blank.png">
-      <img class="reels-img" src="img/reels.png">
-      <div id="reels"></div>
-      <button id="start" class="button">スタート</button>
-      <button id="stop" class="button">ストップ</button>
-      <div class="form">
-        <input type="file" id="csv-file" accept=".csv" >
+    <div class="roulette-game">
+      <div class="roulette">
+        <img class="bg-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8JP3WDhHgrIACKmRoqRX3JsDo_Gcdeg8eBqQovZSR0Sf3_67zd6h9JiqgtRnTu0HriSiO3-598d2o2nBOlmkngzoWr0uFuX05bWtKruml0xp6esFWUxwEbDYCPIKDaliG05uZLCyOpXPH/s800/gekijou_end_blank.png"/>
+        <img class="reels-img" src="img/reels.png" />
+        <div id="reels"></div>
+        <button id="start" class="button">スタート</button>
+        <button id="stop" class="button">ストップ</button>
+        
+      </div>
+      <div class="menu">
+        <div class="file-input form-wrapper">
+          <label>csv/txtファイルを読み込む</label>
+          <input type="file" id="csv-file" accept=".csv,.txt"/>
+        </div>
+
+        <div class="item-input form-wrapper">
+          <label>抽選項目</label>
+          <textarea id="reel-input" wrap="off"></textarea>
+          <button id="save-button">ルーレットの内容を更新する</button>
+        </div>
       </div>
     </div>
   </body>
