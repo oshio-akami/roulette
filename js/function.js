@@ -28,7 +28,7 @@ $(document).ready(function () {
 
   async function Initialize(data) {
     deleteReel();
-    const splitData = data.split(/\n/).filter((c) => c.length > 1);
+    let splitData = data.split(/\n/).filter((c) => c.length > 1);
     $textarea.val(splitData.join('\n'));
     if(splitData.length==0){
       return;
